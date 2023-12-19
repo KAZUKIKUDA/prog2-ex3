@@ -9,7 +9,9 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
 }
-
+java {                                      
+    sourceCompatibility = JavaVersion.VERSION_17
+}
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -40,4 +42,9 @@ application {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = "mob3.App"
+    }
 }
