@@ -45,6 +45,6 @@ tasks.named<Test>("test") {
 }
 tasks.withType<Jar> {
     manifest {
-        attributes["Main-Class"] = "mob3.App"
+        attributes["Main-Class"] = "Main"
     }
 }
